@@ -15,7 +15,7 @@ function gaussian_float(rng::AbstractRNG, sigma::Float64, dims...)
     randn(rng, dims...) .* sigma
 end
 
-# モジュラー正規分布にしたがう乱数生成
+# モジュラー正規分布に従う乱数生成
 function modular_gaussian(rng::AbstractRNG, sigma::Float64, dims...)
     dtot32(Float2Torus05(gaussian_float(rng, sigma, dims...)))
 end

@@ -7,7 +7,7 @@ function tlwe_test()
     n = 630
     α = 2e-15
     μ = 50000000
-    rng = MersenneTwister(0)
+    rng = RandomDevice()
 
     num_try_key = 10000
     num_try_whole = 100

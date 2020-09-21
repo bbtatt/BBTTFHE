@@ -37,3 +37,10 @@ Base.:+(x::EncriptedText, y::EncriptedText) =
 
 Base.:-(x::EncriptedText, y::EncriptedText) = 
     EncriptedText(x.a - y.a, x.b - y.b)
+
+function Base.:*(x::Integer, y::EncriptedText) 
+    tx = Torus32(x)
+    EncriptedText(tx * y.a, tx * y.b)
+end
+
+Base.:*(x::EncriptedText, y::Integer) = y * x
